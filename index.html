@@ -8,7 +8,7 @@
 <body>
 <img src="happy_birthday.jpg" alt="Happy Birthday" style="width:90%; max-width:2250; margin: 0 auto; display:block">
 <div style="width:90%; max-width:2250; margin: 0 auto; display:block; text-align: center; font-size: 80px; color:#d23;">
-<a href="javascript:alert('Alles Gute zum Geburtstag!');" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
+<a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color: #d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
@@ -18,7 +18,6 @@
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
-<a href="javascript:alert('Sehr gut, hoffentlich geht Dir die Puste nicht aus!');" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
@@ -29,21 +28,40 @@
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
-<a href="javascript:alert('Du schaffst es!');" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
-<a href="ohne-grenzen.jpg" onclick="changeColor(this);" style="text-decoration: none; color:#d23;" target="_blank">🔥</a>
+<a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
+<a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
+<a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 <a href="javascript:void(null)" onclick="changeColor(this);" style="text-decoration: none; color:#d23;">🔥</a>
 </div>
 <script>
 function changeColor(element) {
-  element.style.color = "transparent";
-  element.onclick = null;
+	element.style.color = "transparent";
+	element.onclick = null;
+	if ( typeof changeColor.counter == 'undefined' ) {
+		// It has not... perform the initialization
+		changeColor.counter = 0;
+	}
+	changeColor.counter++;
+	
+	if (changeColor.counter > 30) {
+		window.location.href = 'ohne-grenzen.jpg';
+	}
+	else if (changeColor.counter == 1) {
+		alert("Alles Gute zum Geburtstag!");
+	}
+	else if (changeColor.counter == 17) {
+		alert("Sehr gut, hoffentlich geht Dir die Puste nicht aus!");
+	}
+	else if (changeColor.counter == 24) {
+		alert("Du schaffst es!");
+	}
 }
 </script>
 
